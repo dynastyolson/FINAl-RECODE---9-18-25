@@ -6,12 +6,12 @@ import datetime
 import json, os
 
 # Config
-ZTP_ROLE_ID = 1416879960949260410
-ZTP_LOG_CHANNEL_ID = 1416893097291284500
+ZTP_ROLE_ID = 1489441785611817071
+ZTP_LOG_CHANNEL_ID = 1492339724956860531
 ZTP_STORAGE_FILE = 'ztp.json'
-THUMBNAIL_URL = "https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless"
+THUMBNAIL_URL = "https://cdn.discordapp.com/attachments/1231290151708131379/1492345476870180936/Untitled.png?ex=69dafe88&is=69d9ad08&hm=72263ac8462f2704f65973f7367dfb37591e9bd84edbc683f2c6f27901d84412&"
 ADMIN_ID = 1221986685634613338
-SUPERVISOR_ROLE_ID = 1416876088331604048
+SUPERVISOR_ROLE_ID = 1489441770625564734
 
 # Helpers
 def load_json(file):
@@ -107,13 +107,13 @@ class ZTPCog(commands.Cog):
                 await log_channel.send(embed=embed_log)
 
             embed_dm = discord.Embed(
-                title="SVPD | Zero-Tolerance Policy Update",
+                title="LASD | Zero-Tolerance Policy Update",
                 description=(
                     f"Hello {target.mention}, your Zero-Tolerance Policy has been updated.\n\n"
                     "- ZTP added\n\n"
                     "You can use the `/ztp` command (set type to Check) to check your ZTP status at any time."
                 ),
-                color=0xE7BB19
+                color=0x8a7147
             )
             embed_dm.set_thumbnail(url=THUMBNAIL_URL)
 
@@ -134,9 +134,9 @@ class ZTPCog(commands.Cog):
             user_data = ztp_data.get(str(target.id))
             if not user_data:
                 embed_dm = discord.Embed(
-                    title="SVPD | Zero-Tolerance Policy Status",
+                    title="LASD | Zero-Tolerance Policy Status",
                     description=f"{target.mention} currently has **no active Zero-Tolerance Policy**.",
-                    color=0xE7BB19
+                    color=0x8a7147
                 )
                 embed_dm.set_thumbnail(url=THUMBNAIL_URL)
                 try:
@@ -165,9 +165,9 @@ class ZTPCog(commands.Cog):
                     await target.remove_roles(role)
 
                 embed_dm = discord.Embed(
-                    title="SVPD | Zero-Tolerance Policy Status",
+                    title="LASD | Zero-Tolerance Policy Status",
                     description=f"{target.mention} previously had a Zero-Tolerance Policy which has now expired.",
-                    color=0xE7BB19
+                    color=0x8a7147
                 )
                 embed_dm.set_thumbnail(url=THUMBNAIL_URL)
                 try:
@@ -183,13 +183,13 @@ class ZTPCog(commands.Cog):
 
             days_left = (expire_dt - now).days
             embed_dm = discord.Embed(
-                title="SVPD | Zero-Tolerance Policy Status",
+                title="LASD | Zero-Tolerance Policy Status",
                 description=(
                     f"{target.mention} currently has an active Zero-Tolerance Policy.\n\n"
                     f"- `Issued:` {issued_dt.strftime('%d-%m-%Y %H:%M:%S UTC')}\n"
                     f"- `Days Left:` {days_left} day(s)"
                 ),
-                color=0xE7BB19
+                color=0x8a7147
             )
             embed_dm.set_thumbnail(url=THUMBNAIL_URL)
             try:

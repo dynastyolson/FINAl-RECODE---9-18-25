@@ -21,7 +21,7 @@ class DMModal(ui.Modal, title="Send a DM"):
         embed = discord.Embed(
             title="We'd like to get in contact,",
             description=self.statement.value,
-            color=0xE7BB19
+            color=0x8a7147
         )
 
         view = DMConfirmView(self.officer, embed)
@@ -74,7 +74,7 @@ class DMTools(commands.Cog):
         embed = discord.Embed(
             title="Welcome to the department,",
             description=(
-                f"Congratulations on passing the Senora Valley Police Department's application. "
+                f"Congratulations on passing the Los Angeles Sheriffs Department's application. "
                 f"Your application was reviewed at {datetime.utcnow().strftime('%B %d, %Y %I:%M %p UTC')}.\n\n"
                 "You will be given an invite link. This is a security measure, these codes cannot be shared, "
                 "displayed or re-used. If attempted, you will be automatically removed by our systems.\n\n"
@@ -83,10 +83,10 @@ class DMTools(commands.Cog):
                 f"Invite link: ||{invite.url}||\n\n"
                 "With kind regards,"
             ),
-            color=0xE7BB19
+            color=0x8a7147
         )
         embed.set_thumbnail(
-            url="https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless"
+            url="https://media.discordapp.net/attachments/1231290151708131379/1492345476870180936/Untitled.png?ex=69dafe88&is=69d9ad08&hm=72263ac8462f2704f65973f7367dfb37591e9bd84edbc683f2c6f27901d84412&=&format=webp&quality=lossless"
         )
 
         try:

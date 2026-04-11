@@ -5,19 +5,19 @@ from datetime import datetime
 # ------------------------------
 # CONFIGURATION
 # ------------------------------
-FORUM_CHANNEL_ID = 1417027487627608204  # Forum channel for contact posts
-ROLE_CONTACT_NOTIFY = 1416876088331604048  # Role to ping when ticket created
+FORUM_CHANNEL_ID = 1492347637171622018  # Forum channel for contact posts
+ROLE_CONTACT_NOTIFY = 1489441770625564734  # Role to ping when ticket created
 EMOJI_CONFIRM = 1411408394476322846  # Reaction emoji ID
 
 # Elevation roles
-ROLE_HIGH_COMMAND = 1416873675830857759      # High Command
-ROLE_DA = 1416873742746783764                # Department Administration
-ROLE_MANAGEMENT = 1418421753629376624        # Server Management
+ROLE_HIGH_COMMAND = 1489441757442605328      # High Command
+ROLE_DA = 1489441766536118512                # Department Administration
+ROLE_MANAGEMENT = 1489441751184707759        # Server Management
 
 # Role hierarchy for staff replies
-ROLE_SUPERVISOR = 1416876088331604048        # Supervisor
-ROLE_DEPT_ADMIN = 1416873742746783764        # Department Administration
-ROLE_SERVER_MANAGEMENT = 1418421753629376624 # Server Management
+ROLE_SUPERVISOR = 1489441770625564734        # Supervisor
+ROLE_DEPT_ADMIN = 1489441766536118512        # Department Administration
+ROLE_SERVER_MANAGEMENT = 1489441751184707759 # Server Management
 
 
 class ContactSystem(commands.Cog):
@@ -39,7 +39,7 @@ class ContactSystem(commands.Cog):
                     embed = discord.Embed(
                         title="New Reply",
                         description=message.content,
-                        color=0xE7BB19,
+                        color=0x8a7147,
                     )
                     embed.set_thumbnail(
                         url="https://cdn.discordapp.com/attachments/1411384487694307349/1411384964133421107/icon_26.png"
@@ -58,9 +58,9 @@ class ContactSystem(commands.Cog):
                 title="Need Assistance?",
                 description=(
                     "If you have a concern or require assistance, please create a support ticket by pressing the button below. "
-                    "Your request will be directed to the **Senora Valley Police Department Supervisory Board**."
+                    "Your request will be directed to the **Los Angeles Sheriffs Department Supervisory Board**."
                 ),
-                color=0xE7BB19,
+                color=0x8a7147,
             )
             await message.channel.send(embed=embed, view=view)
 
@@ -91,25 +91,25 @@ class ContactSystem(commands.Cog):
         if any(r.id == ROLE_SERVER_MANAGEMENT for r in member.roles):
             return (
                 "Server Management",
-                0xE7BB19,
-                "https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless",
+                0x8a7147,
+                "https://cdn.discordapp.com/attachments/1231290151708131379/1492345476870180936/Untitled.png?ex=69dafe88&is=69d9ad08&hm=72263ac8462f2704f65973f7367dfb37591e9bd84edbc683f2c6f27901d84412&",
             )
         if any(r.id == ROLE_DEPT_ADMIN for r in member.roles):
             return (
                 "Department Administration",
-                0xE7BB19,
-                "https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless",
+                0x8a7147,
+                "https://cdn.discordapp.com/attachments/1231290151708131379/1492345476870180936/Untitled.png?ex=69dafe88&is=69d9ad08&hm=72263ac8462f2704f65973f7367dfb37591e9bd84edbc683f2c6f27901d84412&",
             )
         if any(r.id == ROLE_SUPERVISOR for r in member.roles):
             return (
                 "Department Supervisor",
-                0xE7BB19,
-                "https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless",
+                0x8a7147,
+                "https://cdn.discordapp.com/attachments/1231290151708131379/1492345476870180936/Untitled.png?ex=69dafe88&is=69d9ad08&hm=72263ac8462f2704f65973f7367dfb37591e9bd84edbc683f2c6f27901d84412&",
             )
         return (
             "Department Supervisor",
-            0xE7BB19,
-            "https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless",
+            0x8a7147,
+            "https://cdn.discordapp.com/attachments/1231290151708131379/1492345476870180936/Untitled.png?ex=69dafe88&is=69d9ad08&hm=72263ac8462f2704f65973f7367dfb37591e9bd84edbc683f2c6f27901d84412&",
         )
 
 
@@ -164,7 +164,7 @@ class ContactModal(discord.ui.Modal, title="Contact Form"):
                     f"**User:** {self.user.mention}\n"
                     f"**Date Submitted:** {now}"
                 ),
-                color=0xE7BB19,
+                color=0x8a7147,
             )
 
             view = TicketControls(self.cog, self.user)
@@ -177,10 +177,10 @@ class ContactModal(discord.ui.Modal, title="Contact Form"):
                     "before contacting a department manager.\n\n"
                     f"{self.inquiry.value}"
                 ),
-                color=0xE7BB19,
+                color=0x8a7147,
             )
             embed_dm.set_thumbnail(
-                url="https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless"
+                url="https://cdn.discordapp.com/attachments/1231290151708131379/1492345476870180936/Untitled.png?ex=69dafe88&is=69d9ad08&hm=72263ac8462f2704f65973f7367dfb37591e9bd84edbc683f2c6f27901d84412&"
             )
             try:
                 await self.user.send(embed=embed_dm)

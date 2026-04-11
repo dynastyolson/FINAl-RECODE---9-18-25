@@ -6,11 +6,11 @@ import json
 from pathlib import Path
 
 # CONFIG
-TARGET_CHANNEL_ID = 1416888287754322032   # replace with your channel ID
-SUPERVISORY_ROLE_ID = 1416876088331604048  # replace with your Supervisory Board role ID
+TARGET_CHANNEL_ID = 1489442235664699484   # replace with your channel ID
+SUPERVISORY_ROLE_ID = 1489441770625564734  # replace with your Supervisory Board role ID
 EMAIL_FILE = Path("supervisory_emails.json")
 
-COLOR = discord.Color(int("E7BB19", 16))
+COLOR = discord.Color(int("8a7147", 16))
 GREEN = discord.ButtonStyle.success
 EMAIL_EMOJI = "<:image_20250915_213226179:1417337282700120166>"  # replace with your emoji
 

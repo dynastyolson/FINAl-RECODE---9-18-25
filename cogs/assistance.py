@@ -6,13 +6,13 @@ from discord.ext.commands import CooldownMapping, BucketType
 # ------------------------------
 # SETTINGS
 # ------------------------------
-ASSISTANCE_ROLE_ID = 1416873422234845284   # Officers who can request assistance
-FORCE_REQUEST_ROLE_ID = 1416873405411491940  # Supervisors who can force request
+ASSISTANCE_ROLE_ID = 1489441768566161519   # Officers who can request assistance
+FORCE_REQUEST_ROLE_ID = 1489441766536118512  # Supervisors who can force request
 ADMIN_USER_ID = 1221986685634613338        # Developer override
-ASSISTANCE_CHANNEL_ID = 1418416970147299400  # Assistance request channel
+ASSISTANCE_CHANNEL_ID = 1489442163203768420  # Assistance request channel
 
 DEPARTMENT_LOGO = "https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless"
-COLOR_SCHEME = 0xE7BB19  # Department gray
+COLOR_SCHEME = 0x8a7147  # Department gray
 
 ASSISTANCE_COOLDOWN = CooldownMapping.from_cooldown(1, 21600, BucketType.user)  # 6 hours
 
@@ -26,7 +26,7 @@ def can_use_force_request(user):
 
 
 class AssistanceCog(commands.Cog):
-    """Handles officer assistance requests."""
+    """Handles deputy assistance requests."""
 
     def __init__(self, bot: commands.Bot):
         self.bot = bot
@@ -90,13 +90,13 @@ class AssistanceCog(commands.Cog):
 
         if priority_value == 1:
             ping = "@everyone"
-            desc_text = "is urgently requesting additional officers."
+            desc_text = "is urgently requesting additional deputies."
         elif priority_value == 2:
             ping = "@here"
-            desc_text = "is requesting additional officers."
+            desc_text = "is requesting additional deputies."
         else:
             ping = None
-            desc_text = "is requesting officer assistance."
+            desc_text = "is requesting deputy assistance."
 
         description = f"The department {desc_text}\n\n**Reason:** {reason}"
         embed = Embed(

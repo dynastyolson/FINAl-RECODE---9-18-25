@@ -5,10 +5,10 @@ from datetime import datetime, timezone
 # ------------------------------
 # SETTINGS
 # ------------------------------
-GUILD_ID = 1416869400748757124  # Replace with your department server ID
-CHANNEL_ID = 1416912156569636985  # Replace with the channel ID for logs
-DEPARTMENT_LOGO = "https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless"
-COLOR_SCHEME = 0xE7BB19  # Department gray
+GUILD_ID = 1465423138581123186  # Replace with your department server ID
+CHANNEL_ID = 1489753816671981708  # Replace with the channel ID for logs
+DEPARTMENT_LOGO = "https://cdn.discordapp.com/attachments/1231290151708131379/1492345476870180936/Untitled.png?ex=69dafe88&is=69d9ad08&hm=72263ac8462f2704f65973f7367dfb37591e9bd84edbc683f2c6f27901d84412&"
+COLOR_SCHEME = 0x8a7147  # Department gray
 
 
 class OfficerLoggerCog(commands.Cog):
@@ -32,7 +32,7 @@ class OfficerLoggerCog(commands.Cog):
                 color=COLOR_SCHEME,
                 timestamp=datetime.now(timezone.utc)
             )
-            embed.set_author(name="Senora Valley Police Department", icon_url=DEPARTMENT_LOGO)
+            embed.set_author(name="Los Angeles Sheriffs Department", icon_url=DEPARTMENT_LOGO)
             embed.set_thumbnail(url=DEPARTMENT_LOGO)
             await channel.send(embed=embed)
 
@@ -51,7 +51,7 @@ class OfficerLoggerCog(commands.Cog):
                 color=COLOR_SCHEME,
                 timestamp=datetime.now(timezone.utc)
             )
-            embed.set_author(name="Senora Valley Police Department", icon_url=DEPARTMENT_LOGO)
+            embed.set_author(name="Los Angeles Sheriffs Department", icon_url=DEPARTMENT_LOGO)
             embed.set_thumbnail(url=DEPARTMENT_LOGO)
             await channel.send(embed=embed)
 

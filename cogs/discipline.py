@@ -6,11 +6,11 @@ import json, asyncio
 from pathlib import Path
 
 # CONFIG
-LOG_CHANNEL_ID = 1416895577156747424
-TARGET_GUILD_ID = 1416869400748757124
+LOG_CHANNEL_ID = 1492339928523079792
+TARGET_GUILD_ID = 1465423138581123186
 AUTH_FILE = Path("authorization_logs.json")
 
-SUSPENSION_ROLE_ID = 1416876088331604048  # replace with actual
+SUSPENSION_ROLE_ID = 1489441783770513491  # replace with actual
 DEMOTION_REMOVE_FILE = Path("demotion_remove_roles.json")
 DEMOTION_ASSIGN_FILE = Path("demotion_assign_roles.json")
 
@@ -22,8 +22,8 @@ DISCIPLINE_LEVELS = {
     "Blacklist": 4,
 }
 
-COLOR = discord.Color(int("E7BB19", 16))
-LOGO_URL = "https://media.discordapp.net/attachments/1400897643772907640/1424180413076606977/Untitled_design_4.png?ex=69107e9e&is=690f2d1e&hm=74989a85019ed50ac5814b2ce101c204b3f26cfe13a3d62351af0d34c5e76cad&=&format=webp&quality=lossless"
+COLOR = discord.Color(int("8a7147", 16))
+LOGO_URL = "https://cdn.discordapp.com/attachments/1231290151708131379/1492345476870180936/Untitled.png?ex=69dafe88&is=69d9ad08&hm=72263ac8462f2704f65973f7367dfb37591e9bd84edbc683f2c6f27901d84412&"
 
 # ---------------- Authorization ----------------
 def get_user_level(user_id: int) -> int | None:
@@ -187,7 +187,7 @@ async def handle_discipline(
 
     # DM Embed
     embed_dm = discord.Embed(
-        title="Senora Valley Police Department | Disciplinary Action",
+        title="Los Angeles Sheriffs Department | Disciplinary Action",
         description=(
             f"- **Reason:** {reason}\n"
             f"- **Evidence:** {evidence}\n"
